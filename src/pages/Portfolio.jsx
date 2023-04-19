@@ -8,8 +8,8 @@ export default function Portfolio() {
 
     const [getTabData, setTabData] = useState({
         ALL: 0,
-        Service: 0,
-        ICT: 0,
+        Work: 0,
+        Side: 0,
     });
 
     // 현재 탭을 알아내는

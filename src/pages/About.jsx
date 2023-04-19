@@ -1,5 +1,6 @@
 import CarrerItem from '../components/CarrerItem';
 import myData from '../myCarrerData';
+import TrainingItem from '../components/TrainingItem';
 
 export default function About() {
     return (
@@ -26,13 +27,23 @@ export default function About() {
                 Education.
             </h3>
             <article className="w-full mb-10 p-5">
-                <h2 className="text-4xl mb-3 font-bold">한성대학교</h2>
+                <h2 className="text-2xl md:text-3xl mb-3 font-bold">한성대학교</h2>
                 <h4>패션디자인 전공</h4>
                 <h4 className="mb-5">2011.03-2016.02</h4>
                 <p>
                     패션 디자인전공으로 4년동안 공부하였으며, 졸업 작품으로 한복과 여성 기성복을
                     만들어서 패션쇼를 진행한 경험이 있습니다.
                 </p>
+            </article>
+            <h3 className="text-5xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 ">
+                Training.
+            </h3>
+            <article className="w-full mb-10 p-5">
+                <ul className="flex gap-10 flex-col text-1xl">
+                    {myData.trainings.map(t => (
+                        <TrainingItem data={t} key={t.title} />
+                    ))}
+                </ul>
             </article>
             <h3 className="text-5xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 ">
                 Skills.

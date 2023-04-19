@@ -46,7 +46,7 @@ export default function Header() {
             ref={targetHeader}
             className="w-full h-19 border-b-8 border-amber-400 px-4 fixed top-0 duration-500 bg-slate-50">
             <nav>
-                <ul className="flex justify-end items-center gap-x-4 text-2xl duration-3000">
+                <ul className="flex justify-end items-center gap-x-4 text-lg duration-3000">
                     {menuList.map(m => (
                         <li key={m.value} className="hover:font-bold">
                             <Link to={m.value}>{m.title}</Link>

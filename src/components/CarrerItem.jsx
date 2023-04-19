@@ -2,7 +2,7 @@ export default function CarrerItem({ data: { company, task, period, details } })
     return (
         <li className="flex w-full border-1 border-stone">
             <div className="w-2/4 border-r">
-                <h2 className="text-4xl md:text-5xl  mb-3 font-bold">{company}</h2>
+                <h2 className="text-3xl md:text-4xl  mb-3 font-bold">{company}</h2>
                 <h4>{task}</h4>
                 <h4>{period}</h4>
             </div>
@@ -17,15 +17,15 @@ export default function CarrerItem({ data: { company, task, period, details } })
                                 <h4>{d.period}</h4>
                             </div>
                             <div>
-                                <h2 className="font-bold text-2xl">Description</h2>
+                                <h2 className="font-bold text-1xl md:text-2xl">Description</h2>
                                 <p>{d.description}</p>
                             </div>
                             <div>
-                                <h2 className="font-bold text-2xl">맡은 직무</h2>
+                                <h2 className="font-bold text-1xl md:text-2xl">맡은 직무</h2>
                                 <p>{d.myJob}</p>
                             </div>
                             <div>
-                                <h2 className="font-bold text-2xl">사용 언어</h2>
+                                <h2 className="font-bold text-1xl md:text-2xl">사용 언어</h2>
                                 <p>{d.techStack}</p>
                             </div>
                         </li>

@@ -5,7 +5,7 @@ export default function Layout() {
     return (
         <div className="w-full h-full flex flex-col justify-center">
             <Header />
-            <section className="max-w-screen-lg mx-auto">
+            <section className="max-w-screen-lg mx-auto mt-10">
                 <Outlet />
             </section>
         </div>
