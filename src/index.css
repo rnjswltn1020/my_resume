@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 폰트 설정 */
+@font-face {
+  font-family: 'Dovemayo_gothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 스크롤 숨기기 */
+html,body{
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body {
+  margin: 0;
+  font-family: 'Dovemayo_gothic';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 스크롤 숨기기 */
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li,
+ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+}
