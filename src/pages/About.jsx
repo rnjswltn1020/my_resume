@@ -51,12 +51,18 @@ export default function About() {
             </h3>
             <article className="w-full mb-10 p-5">
                 <ul className="flex gap-5 flex flex-col">
-                    {myData.contact.map((c, idx) => (
-                        <li key={idx} className="rounded-xl bg-slate-100 p-1">
-                            <span> {c.method} : </span>
-                            <a href={`mailto:${c.url}`}>{c.url}</a>
-                        </li>
-                    ))}
+                    {myData.contact.map((c, idx) => {
+                        return (
+                            <li key={idx} className="rounded-xl bg-slate-100 p-1">
+                                <span> {c.method} : </span>
+                                <a
+                                    href={c.method === 'E-mail' ? `mailto:${c.url}` : c.url}
+                                    target={c.method !== 'E-mail' ? '_black' : ''}>
+                                    {c.url}
+                                </a>
+                            </li>
+                        );
+                    })}
                 </ul>
             </article>
         </main>
