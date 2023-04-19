@@ -11,7 +11,9 @@ export default function CarrerItem({ data: { company, task, period, details } })
                     return (
                         <li key={d.projectName} className="flex gap-3 flex-col">
                             <div>
-                                <h2 className="text-3xl font-bold mb-3">{d.projectName}</h2>
+                                <h2 className="text-2xl md:text-3xl font-bold mb-3">
+                                    {d.projectName}
+                                </h2>
                                 <h4>{d.period}</h4>
                             </div>
                             <div>
