@@ -41,7 +41,7 @@ export default function About() {
             <article className="w-full mb-10 p-5">
                 <ul className="flex gap-10 flex-col text-1xl">
                     {myData.trainings.map(t => (
-                        <TrainingItem data={t} key={t.title} />
+                        <TrainingItem data={t} key={t.id} />
                     ))}
                 </ul>
             </article>

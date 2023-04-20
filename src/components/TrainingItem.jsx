@@ -7,8 +7,10 @@ export default function TrainingItem({ data: { title, period, when, what } }) {
             </div>
             <h4 className="mb-3 text-sm">{period}</h4>
             <ul>
-                {what.map(w => (
-                    <li className="list-disc">{w}</li>
+                {what.map((w, idx) => (
+                    <li className="list-disc" key={idx}>
+                        {w}
+                    </li>
                 ))}
             </ul>
         </li>

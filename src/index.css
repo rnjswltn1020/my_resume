@@ -21,6 +21,8 @@
 html,body{
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -33,6 +35,10 @@ body {
 /* 스크롤 숨기기 */
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
+}
+
+#root{
+  height: 100%;
 }
 
 code {
