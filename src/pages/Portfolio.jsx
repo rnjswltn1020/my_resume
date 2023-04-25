@@ -1,15 +1,15 @@
 import { useEffect, useState, useRef } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import PortfolioData from '../portfolioData';
 import PortfolioItem from '../components/PortfolioItem';
 
 export default function Portfolio() {
+    const navigate = useNavigate();
     const [currentQueryParameters] = useSearchParams();
-
     const [getTabData, setTabData] = useState({
         ALL: 0,
-        Work: 0,
-        Side: 0,
+        WORK: 0,
+        SIDE: 0,
     });
 
     // 현재 탭을 알아내는
@@ -32,11 +32,11 @@ export default function Portfolio() {
         tabData.ALL = data.length;
 
         data.forEach(item => {
-            if (item.group.indexOf('SERVICE') > -1) {
-                tabData.Service += 1;
+            if (item.type === 'work') {
+                tabData.WORK += 1;
             }
-            if (item.group.indexOf('ICT') > -1) {
-                tabData.ICT += 1;
+            if (item.type === 'side') {
+                tabData.SIDE += 1;
             }
         });
 
@@ -45,15 +45,16 @@ export default function Portfolio() {
 
     // 타겟 변경시 필터링 함수.
     const changeTab = tab => {
+        console.log(tab);
         setShowCount(9);
         setShowIdx(0);
 
         let filtering = [];
 
-        if (tab === 'Service') {
-            filtering = PortfolioData.filter(item => item.group.indexOf('SERVICE') > -1);
-        } else if (tab === 'ICT') {
-            filtering = PortfolioData.filter(item => item.group.indexOf('ICT') > -1);
+        if (tab === 'WORK') {
+            filtering = PortfolioData.filter(item => item.type === 'work');
+        } else if (tab === 'SIDE') {
+            filtering = PortfolioData.filter(item => item.type === 'side');
         } else if (tab === 'ALL') {
             filtering = [...PortfolioData];
         }
@@ -77,55 +78,64 @@ export default function Portfolio() {
 
     return (
         <>
-            <div className="portfolio_container on">
-                <ul className="tabMenu">
+            <div className="flex w-full flex-col">
+                <ul className="w-full flex mb-6 gap-5 border-b-4 border-black">
                     {Object.keys(getTabData).map(item => {
                         return (
-                            <li key={item} className={getNowTab === item ? 'active' : ''}>
-                                <Link to={`/portfolio?type=${item}`}>{item}</Link>
-                                <span className="portfolio__count">{getTabData[item]}</span>
+                            <li
+                                key={item}
+                                onClick={() => navigate(`/portfolio?type=${item}`)}
+                                className={`${
+                                    getNowTab === item
+                                        ? 'text-highlight translate-y-0 rounded-t-lg'
+                                        : 'text-normal rounded-b-lg'
+                                } bg-black p-1.5 translate-y-full duration-300  text-sm cursor-pointer
+                                `}>
+                                <span className="w-full text-white">{item}</span>
+                                <span className="text-xs text-highlight">[{getTabData[item]}]</span>
                             </li>
                         );
                     })}
                 </ul>
-
-                <ul className="tabContent">
-                    {getPortFolio.map((item, idx) => {
-                        if (idx < getShowCount) {
-                            return (
-                                <li key={item.id}>
-                                    <PortfolioItem
-                                        key={item.id}
-                                        id={item.id}
-                                        description={item.title}
-                                        viewMore={item.detailImage}
-                                        name={item.title}
-                                        tag={item.section}
-                                        onClickEvt={() => {
-                                            setShowIdx(idx);
-                                            if (item.detailImage) {
-                                                // modal.current.open();
-                                            }
-                                        }}
-                                    />
-                                </li>
-                            );
-                        }
-                        return false;
-                    })}
-                </ul>
-                {getPortFolio.length < 10 || getShowCount > getPortFolio.length ? (
-                    ''
-                ) : (
-                    <button
-                        type="button"
-                        className="portfolio__btn"
-                        onClick={() => {
-                            showMore();
-                        }}>
-                        MORE
-                    </button>
-                )}
+                <div className="flex flex-col justify-center flex-1 mt-7">
+                    <ul>
+                        {getPortFolio.map((item, idx) => {
+                            if (idx < getShowCount) {
+                                return (
+                                    <li key={item.id}>
+                                        <PortfolioItem
+                                            key={item.id}
+                                            id={item.id}
+                                            description={item.title}
+                                            viewMore={item.detailImage}
+                                            name={item.title}
+                                            tag={item.section}
+                                            onClickEvt={() => {
+                                                setShowIdx(idx);
+                                                if (item.detailImage) {
+                                                    // modal.current.open();
+                                                }
+                                            }}
+                                        />
+                                    </li>
+                                );
+                            }
+                            return false;
+                        })}
+                    </ul>
+                    {getPortFolio.length < 10 || getShowCount > getPortFolio.length ? (
+                        ''
+                    ) : (
+                        <button
+                            type="button"
+                            className="portfolio__btn"
+                            onClick={() => {
+                                showMore();
+                            }}>
+                            MORE
+                        </button>
+                    )}
+                </div>
             </div>
         </>
     );

@@ -15,7 +15,7 @@ export default function About() {
                     웹 프론트엔드 엔지니어 2년차로 일하고 있습니다.{' '}
                 </p>
             </div>
-            <h3 className="text-5xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 ">
+            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Work Experience.
             </h3>
             <section className="w-full mb-10">
@@ -23,7 +23,7 @@ export default function About() {
                     {myData !== null && myData.works.map(c => <CarrerItem key={c.id} data={c} />)}
                 </ul>
             </section>
-            <h3 className="text-5xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 ">
+            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Education.
             </h3>
             <article className="w-full mb-10 p-5">
@@ -35,7 +35,7 @@ export default function About() {
                     만들어서 패션쇼를 진행한 경험이 있습니다.
                 </p>
             </article>
-            <h3 className="text-5xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 ">
+            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Training.
             </h3>
             <article className="w-full mb-10 p-5">
@@ -45,11 +45,11 @@ export default function About() {
                     ))}
                 </ul>
             </article>
-            <h3 className="text-5xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 ">
+            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Skills.
             </h3>
             <article className="w-full mb-10 p-5">
-                <ul className="flex gap-5 flex flex-wrap">
+                <ul className="flex gap-5 flex flex-wrap text-sm md:text-base">
                     {myData.skills.map((s, idx) => (
                         <li key={idx} className="rounded-xl bg-slate-100 p-1">
                             {s}
@@ -57,11 +57,11 @@ export default function About() {
                     ))}
                 </ul>
             </article>
-            <h3 className="text-5xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 ">
+            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Contact.
             </h3>
             <article className="w-full mb-10 p-5">
-                <ul className="flex gap-5 flex flex-col">
+                <ul className="flex gap-5 flex flex-col text-sm md:text-base">
                     {myData.contact.map((c, idx) => {
                         return (
                             <li key={idx} className="rounded-xl bg-slate-100 p-1">

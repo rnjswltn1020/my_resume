@@ -1,23 +1,14 @@
 import { useState, useRef } from 'react';
 
-
-export default function PortfolioItem({
-    id,
-    description,
-    tag,
-    onClickEvt,
-    viewMore,
-}) {
+export default function PortfolioItem({ id, description, tag, onClickEvt, viewMore }) {
     const [loading, setLoading] = useState(true);
     const imgBox = useRef(null);
 
     return (
         <>
             <div
-                className={`w-400px pt-calc(100% / 199*129) relative overflow-hidden border-1 border-slate-300  ${viewMore} && viewMore`
-                }
-                onClick={onClickEvt}
-            >
+                className={`w-px relative overflow-hidden  ${viewMore} ? viewMore : ''`}
+                onClick={onClickEvt}>
                 {loading && <div className="placeholderImg" />}
                 <div ref={imgBox} className="imageWrapper">
                     <img
