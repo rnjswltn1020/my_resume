@@ -1,14 +1,5 @@
 const portfolioData = [
     {
-        id: 'onnuri',
-        title: '온누리 약국',
-        type: 'work',
-        section: ['Admin Page'],
-        whatTodo: ['어드민페이지 개발'],
-        thumbImage: true,
-        detailImage: true,
-    },
-    {
         id: 'dev',
         title: '데블록 자사 홈페이지 리뉴얼',
         type: 'work',
@@ -23,7 +14,7 @@ const portfolioData = [
         type: 'work',
         section: ['Admin page'],
         whatTodo: ['어드민페이지 개발'],
-        thumbImage: true,
+        thumbImage: false,
         detailImage: true,
     },
     {
@@ -32,7 +23,7 @@ const portfolioData = [
         type: 'work',
         section: ['Admin page'],
         whatTodo: ['어드민페이지 개발'],
-        thumbImage: true,
+        thumbImage: false,
         detailImage: true,
     },
     {
@@ -72,8 +63,8 @@ const portfolioData = [
         detailImage: true,
     },
     {
-        id: 'toDoList',
-        title: 'to do List',
+        id: 'todolist',
+        title: 'To Do List',
         type: 'side',
         section: ['Web'],
         whatTodo: '웹개발',

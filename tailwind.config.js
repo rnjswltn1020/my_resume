@@ -11,6 +11,11 @@ module.exports = {
             colors: {
                 highlight: '#ef4444',
                 normal: '#27272a',
+                main: '#ffefda2e',
+            },
+            width: {
+                150: '150px',
+                300: '300px',
             },
         },
     },

@@ -45,7 +45,7 @@ export default function Header() {
     return (
         <header
             ref={targetHeader}
-            className="w-full h-19 border-b-8 border-amber-400 px-4 fixed top-0 duration-500 bg-[#ffefda2e] p-2 backdrop-blur-sm">
+            className="w-full h-19 border-b-8 border-amber-400 px-4 fixed top-0 duration-500 bg-main p-2 backdrop-blur-sm">
             <nav>
                 <ul className="flex justify-end items-center gap-x-4 text-lg duration-3000">
                     {menuList.map(m => (

@@ -22,7 +22,7 @@ export default function Portfolio() {
     const [getNowTab, setNowTab] = useState(nowTab());
     const [getShowIdx, setShowIdx] = useState(0);
     const [getPortFolio, setPortFolio] = useState([]);
-    const [getShowCount, setShowCount] = useState(9);
+    const [getShowCount, setShowCount] = useState(6);
 
     // 포트폴리오 데이터 카운트 계산
     const calcPortfolioLen = () => {
@@ -46,7 +46,7 @@ export default function Portfolio() {
     // 타겟 변경시 필터링 함수.
     const changeTab = tab => {
         console.log(tab);
-        setShowCount(9);
+        setShowCount(6);
         setShowIdx(0);
 
         let filtering = [];
@@ -88,8 +88,8 @@ export default function Portfolio() {
                                 className={`${
                                     getNowTab === item
                                         ? 'text-highlight translate-y-0 rounded-t-lg'
-                                        : 'text-normal rounded-b-lg'
-                                } bg-black p-1.5 translate-y-full duration-300  text-sm cursor-pointer
+                                        : 'text-normal translate-y-full rounded-b-lg'
+                                } bg-black p-1.5 duration-300 text-sm cursor-pointer
                                 `}>
                                 <span className="w-full text-white">{item}</span>
                                 <span className="text-xs text-highlight">[{getTabData[item]}]</span>
@@ -97,38 +97,37 @@ export default function Portfolio() {
                         );
                     })}
                 </ul>
-                <div className="flex flex-col justify-center flex-1 mt-7">
-                    <ul>
+                <div className="flex flex-col justify-center flex-1 mt-7 items-center">
+                    <ul className="w-full flex flex-wrap align-center gap-11 mb-10">
                         {getPortFolio.map((item, idx) => {
                             if (idx < getShowCount) {
                                 return (
-                                    <li key={item.id}>
-                                        <PortfolioItem
-                                            key={item.id}
-                                            id={item.id}
-                                            description={item.title}
-                                            viewMore={item.detailImage}
-                                            name={item.title}
-                                            tag={item.section}
-                                            onClickEvt={() => {
-                                                setShowIdx(idx);
-                                                if (item.detailImage) {
-                                                    // modal.current.open();
-                                                }
-                                            }}
-                                        />
-                                    </li>
+                                    <PortfolioItem
+                                        key={item.id}
+                                        id={item.id}
+                                        description={item.title}
+                                        viewMore={item.detailImage}
+                                        name={item.title}
+                                        tag={item.section}
+                                        thumbImage={item.thumbImage}
+                                        onClickEvt={() => {
+                                            setShowIdx(idx);
+                                            if (item.detailImage) {
+                                                // modal.current.open();
+                                            }
+                                        }}
+                                    />
                                 );
                             }
                             return false;
                         })}
                     </ul>
-                    {getPortFolio.length < 10 || getShowCount > getPortFolio.length ? (
+                    {getPortFolio.length < 7 || getShowCount > getPortFolio.length ? (
                         ''
                     ) : (
                         <button
                             type="button"
-                            className="portfolio__btn"
+                            className="bg-main w-150 text-sm p-3 rounded-2xl border-rose-600"
                             onClick={() => {
                                 showMore();
                             }}>
