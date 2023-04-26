@@ -33,8 +33,12 @@ body {
 }
 
 /* 스크롤 숨기기 */
-body::-webkit-scrollbar {
+body::-webkit-scrollbar, .modal div::-webkit-scrollbar{
   display: none; /* Chrome, Safari, Opera*/
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 #root{

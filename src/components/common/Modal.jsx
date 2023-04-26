@@ -51,7 +51,7 @@ function Modal(props, ref) {
         <AnimatePresence>
             {open && (
                 <motion.aside
-                    className="modal"
+                    className="modal w-screen h-screen fixed top-0 left-0 z-10001"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{
                         opacity: 1,
@@ -62,10 +62,9 @@ function Modal(props, ref) {
                         opacity: 0,
                         scale: 1,
                         transition: { duration: 0.2, delay: 0.5 },
-                    }}
-                >
+                    }}>
                     <motion.div
-                        className="modal_overlay"
+                        className="w-screen h-screen flex justify-center items-center z-11000 bg-modalBg"
                         initial={{ opacity: 0 }}
                         animate={{
                             opacity: 1,
@@ -74,21 +73,20 @@ function Modal(props, ref) {
                         exit={{
                             opacity: 0,
                             transition: { duration: 0.2, delay: 0.9 },
-                        }}
-                    >
-                        <div className="modal_content_wrapper" ref={modal}>
-                            <div className="modal_content">{children}</div>
+                        }}>
+                        <div
+                            className="relative w-full h-full max-h-854 max-w-screen-lg"
+                            ref={modal}>
+                            <div className="w-full h-full max-h-854 max-w-screen-lg relative bg-modalBg p-0 z-11000 overflow-y-scroll">
+                                {children}
+                            </div>
                             <motion.p
-                                className="close_btn"
+                                className="absolute right-0 top-0 flex justify-center items-center bg-black cursor-pointer z-11002 w-6 md:w-10"
                                 onClick={e => {
                                     e.preventDefault();
                                     modalClose();
-                                }}
-                            >
-                                <img
-                                    src={`${path}/img/close-wh/close-wh.png`}
-                                    alt="close_btn"
-                                />
+                                }}>
+                                <img src={`${path}/img/close-wh.png`} alt="close_btn" />
                             </motion.p>
                         </div>
                     </motion.div>

@@ -1,15 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 
 export default function Header() {
-    const [targetMenu, setTargetMenu] = useState(null);
+    const location = useLocation();
+    const [targetMenu, setTargetMenu] = useState(location.pathname.slice(1));
     const targetHeader = useRef(null);
     const menuList = [
         {
             title: 'About 권지수',
-            value: 'About',
+            value: 'about',
         },
-        { title: 'Portfolio', value: 'Portfolio' },
+        { title: 'Portfolio', value: 'portfolio' },
     ];
     let lastScrollY = 0;
     const handleScroll = e => {
@@ -25,7 +26,6 @@ export default function Header() {
         }
     };
 
-    console.log();
     const handleMenu = e => {
         const { ariaLabel } = e.target;
         setTargetMenu(ariaLabel);
@@ -45,7 +45,7 @@ export default function Header() {
     return (
         <header
             ref={targetHeader}
-            className="w-full h-19 border-b-8 border-amber-400 px-4 fixed top-0 duration-500 bg-main p-2 backdrop-blur-sm">
+            className="w-full h-19 border-b-8 border-amber-400 px-4 fixed top-0 duration-500 bg-main p-2 backdrop-blur-sm z-9999">
             <nav>
                 <ul className="flex justify-end items-center gap-x-4 text-lg duration-3000">
                     {menuList.map(m => (

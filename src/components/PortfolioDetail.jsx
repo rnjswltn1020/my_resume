@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import Spinner from "./common/Spinner";
+import Spinner from './common/Spinner';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 const path = process.env.PUBLIC_URL;
-
 let dataLength = 0;
 
 function PortfolioImage(props) {
@@ -36,12 +37,19 @@ function PortfolioImage(props) {
     return (
         <>
             {showSpinner && <Spinner />}
+            {data.link && (
+                <img
+                    className="absolute top-3 right-12 cursor-pointer w-5 animate-bounce"
+                    src={`${path}/img/like.png`}
+                    alt="링크이동버튼"
+                />
+            )}
             <img
-                src={`${path}/img/portfolio/${data.id}-detail.webp`}
+                src={`${path}/img/portfolio/${data.id}-detail.png`}
                 key={data.id}
                 alt={data.title}
                 style={{ display: !showSpinner ? 'block' : 'none' }}
-                className="portfolio_img"
+                className="w-full"
                 onLoad={() => {
                     setImageLoaded(true);
                 }}
@@ -94,35 +102,27 @@ export default function PortfolioDetail({ data, showItemIdx }) {
 
     return (
         <>
-            <div className="scrollView">
+            <div className="flex justify-center items-center w-full h-full overflow-y-scroll flex items-baseline z-11002">
                 <PortfolioImage data={targetData()} />
             </div>
 
             {isPrev() > -1 && (
                 <div
-                    className="modal_btn prev"
+                    className="w-10 h-10 p-1.5 absolute opacity-75 rounded-3xl flex justify-center items-center cursor-pointer left-5 bottom-24 z-11002 backdrop-contrast-200 bg-white"
                     onClick={() => {
                         changeTargetIdx(isPrev());
-                    }}
-                >
-                    <img
-                        src="/img/btn-arrow-wh/btn-arrow-wh.png"
-                        alt="이전 포트폴리오"
-                    />
+                    }}>
+                    <ArrowCircleLeftIcon fontSize="large" />
                 </div>
             )}
 
             {isNext() > -1 && (
                 <div
-                    className="modal_btn next"
+                    className="w-10 h-10 p-1.5 absolute opacity-75 rounded-3xl flex justify-center items-center cursor-pointer right-5 bottom-24 z-11002 backdrop-contrast-200 bg-white"
                     onClick={() => {
                         changeTargetIdx(isNext());
-                    }}
-                >
-                    <img
-                        src="/img/btn-arrow-wh/btn-arrow-wh.png"
-                        alt="다음 포트폴리오"
-                    />
+                    }}>
+                    <ArrowCircleRightIcon fontSize="large" />
                 </div>
             )}
         </>

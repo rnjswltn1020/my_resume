@@ -2,8 +2,11 @@ import { useEffect, useState, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import PortfolioData from '../portfolioData';
 import PortfolioItem from '../components/PortfolioItem';
+import Modal from '../components/common/Modal';
+import PortfolioDetail from '../components/PortfolioDetail';
 
 export default function Portfolio() {
+    const modal = useRef(null);
     const navigate = useNavigate();
     const [currentQueryParameters] = useSearchParams();
     const [getTabData, setTabData] = useState({
@@ -45,7 +48,6 @@ export default function Portfolio() {
 
     // 타겟 변경시 필터링 함수.
     const changeTab = tab => {
-        console.log(tab);
         setShowCount(6);
         setShowIdx(0);
 
@@ -98,7 +100,7 @@ export default function Portfolio() {
                     })}
                 </ul>
                 <div className="flex flex-col justify-center flex-1 mt-7 items-center">
-                    <ul className="w-full flex flex-wrap align-center gap-11 mb-10">
+                    <ul className="w-full flex flex-wrap align-center gap-11 p-5 lg:p-0 md:justify-between lg:mb-10 ">
                         {getPortFolio.map((item, idx) => {
                             if (idx < getShowCount) {
                                 return (
@@ -108,12 +110,16 @@ export default function Portfolio() {
                                         description={item.title}
                                         viewMore={item.detailImage}
                                         name={item.title}
-                                        tag={item.section}
+                                        section={item.section}
+                                        whatTodo={item.whatTodo}
                                         thumbImage={item.thumbImage}
+                                        link={item.link && item.link}
                                         onClickEvt={() => {
                                             setShowIdx(idx);
                                             if (item.detailImage) {
-                                                // modal.current.open();
+                                                modal.current.open();
+                                            } else if (!item.detailImage && item.link) {
+                                                window.open(item.link);
                                             }
                                         }}
                                     />
@@ -127,7 +133,7 @@ export default function Portfolio() {
                     ) : (
                         <button
                             type="button"
-                            className="bg-main w-150 text-sm p-3 rounded-2xl border-rose-600"
+                            className="bg-amber-200 w-150 text-sm p-3 rounded-2xl border-rose-600 mb-10 md:mb-8 hover:bg-amber-300 duration-300"
                             onClick={() => {
                                 showMore();
                             }}>
@@ -136,6 +142,9 @@ export default function Portfolio() {
                     )}
                 </div>
             </div>
+            <Modal ref={modal}>
+                <PortfolioDetail data={getPortFolio} showItemIdx={getShowIdx} />
+            </Modal>
         </>
     );
 }
