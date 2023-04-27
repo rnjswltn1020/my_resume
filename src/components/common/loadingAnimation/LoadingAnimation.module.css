@@ -1,0 +1,115 @@
+.first_layer{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    display: flex;
+    flex-wrap:nowrap;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index:9;
+    color: #fff;
+}
+
+.first_layer.act{
+    transition: all 1.5s;
+    display: flex;
+}
+
+.mainTt{
+    opacity: 0;
+    transition: 2s;
+    animation-delay:0.5s;
+    animation-name: mainTtFadeIn;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.mainTt.act{
+    opacity:1;
+}
+
+.ball {
+    color: #fff;
+    position: absolute;
+    left: 15.5%;
+    top: 10px;
+    animation-name: shotBall;
+    animation-delay: 3s;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+
+@keyframes shotBall {
+    0% {
+        transform: translate(16%, 0) rotate(360deg);
+    }
+    10% {
+        transform: translate(2000%, -400px);
+    }
+    30% {
+        transform: translate(4000%, 0px) rotate(560deg);
+    }
+    40% {
+        transform: translate(5500%, -150px) ;
+    }
+    50% {
+        transform: translate(6000%, -10px) ;
+    }
+    60%{
+        transform: translate(7000%, -50px) rotate(350deg);
+    }
+    80%{
+        transform: translate(8000%, -5px) rotate(660deg);
+    }
+    100% {
+        transform: translate(9000%,0) rotate(960deg);
+    }
+}
+
+
+.run{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transform: translateX(3%);
+    animation-name: running;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mainTtFadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes running {
+    0% {
+        transform: translateX(-2%);
+    }
+    20% {
+        transform: translateX(4%);
+    }
+    30% {
+        transform: translate(2%, 10px);
+    }
+    100% {
+        transform: translateX(15%);
+    }
+}
+
+
