@@ -81,7 +81,7 @@ export default function Portfolio() {
     return (
         <>
             <div className="flex w-full flex-col">
-                <ul className="w-full flex mb-6 gap-5 border-b-4 border-black">
+                <ul className="w-full flex mb-6 gap-4 border-b-4 border-black cursor-pointer">
                     {Object.keys(getTabData).map(item => {
                         return (
                             <li
@@ -91,7 +91,7 @@ export default function Portfolio() {
                                     getNowTab === item
                                         ? 'text-highlight translate-y-0 rounded-t-lg'
                                         : 'text-normal translate-y-full rounded-b-lg'
-                                } bg-black p-1.5 duration-300 text-sm cursor-pointer
+                                } bg-black p-1.5 duration-300 text-sm cursor-pointer"
                                 `}>
                                 <span className="w-full text-white">{item}</span>
                                 <span className="text-xs text-highlight">[{getTabData[item]}]</span>
@@ -100,7 +100,7 @@ export default function Portfolio() {
                     })}
                 </ul>
                 <div className="flex flex-col justify-center flex-1 mt-7 items-center">
-                    <ul className="w-full flex flex-wrap align-center gap-11 p-5 lg:p-0 md:justify-between lg:mb-10 ">
+                    <ul className="w-full flex flex-wrap align-center gap-5 p-5 lg:p-0 md:justify-between lg:mb-10">
                         {getPortFolio.map((item, idx) => {
                             if (idx < getShowCount) {
                                 return (
