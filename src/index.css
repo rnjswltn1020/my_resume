@@ -41,7 +41,7 @@ body.modal-open {
   overflow: hidden;
 }
 
-#root{
+#root, .wrapper{
   height: 100%;
 }
 
