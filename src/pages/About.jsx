@@ -1,8 +1,37 @@
+import { useEffect, useRef } from 'react';
 import CarrerItem from '../components/CarrerItem';
 import myData from '../myCarrerData';
 import TrainingItem from '../components/TrainingItem';
+import { useNavigate } from 'react-router-dom';
 
 export default function About() {
+    const linkBox = useRef(null);
+    const navigate = useNavigate();
+    const checkScroll = () => {
+        if (linkBox.current !== null) {
+            const scrollY = window.scrollY;
+
+            if (scrollY > 2400) {
+                linkBox.current.style.opacity = '1';
+                linkBox.current.style.visibility = 'visible';
+            } else {
+                linkBox.current.style.opacity = '0';
+                linkBox.current.style.visibility = 'hidden';
+            }
+        }
+    };
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            window.addEventListener('scroll', checkScroll);
+        }, 100);
+
+        return () => {
+            clearInterval(timer);
+            window.addEventListener('scroll', checkScroll);
+        };
+    }, []);
+
     return (
         <main className="flex justify-center items-center flex-col gap-2">
             <div className="mb-48 mt-48 p-5">
@@ -76,6 +105,13 @@ export default function About() {
                     })}
                 </ul>
             </article>
+            <span
+                ref={linkBox}
+                onClick={() => navigate('/portfolio')}
+                className="fixed bottom-10 md:bottom-40 right-10 bg-red-400 rounded-2xl p-3 text-xs text-white cursor-pointer animate-bounce transition duration-500 opacity-0">
+                포트폴리오 <br />
+                보러가기🎈
+            </span>
         </main>
     );
 }

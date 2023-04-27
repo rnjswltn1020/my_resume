@@ -7,7 +7,7 @@ export default function Header() {
     const targetHeader = useRef(null);
     const menuList = [
         {
-            title: 'About 권지수',
+            title: 'Resume',
             value: 'about',
         },
         { title: 'Portfolio', value: 'portfolio' },

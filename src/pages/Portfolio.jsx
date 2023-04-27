@@ -114,6 +114,8 @@ export default function Portfolio() {
                                         whatTodo={item.whatTodo}
                                         thumbImage={item.thumbImage}
                                         link={item.link && item.link}
+                                        percentage={item.percentage && item.percentage}
+                                        tech={item.tech}
                                         onClickEvt={() => {
                                             setShowIdx(idx);
                                             if (item.detailImage) {

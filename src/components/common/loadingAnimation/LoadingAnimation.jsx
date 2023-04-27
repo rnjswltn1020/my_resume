@@ -1,6 +1,6 @@
 import styled from './LoadingAnimation.module.css';
-import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
-import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 
 export default function LoadingAnimation() {
     return (
@@ -8,14 +8,14 @@ export default function LoadingAnimation() {
             <h1 className={styled.mainTt}>
                 권 지 수
                 <br />
-                포트폴리오 로딩중 -
+                Portfolio Loading ...
             </h1>
             <div className="flex relative w-full">
                 <span className={styled.run}>
-                    <DirectionsRunIcon fontSize="large" />
+                    <DirectionsWalkIcon fontSize="large" />
                 </span>
                 <span className={styled.ball}>
-                    <SportsBasketballIcon fontSize="small" />
+                    <SportsSoccerIcon fontSize="small" />
                 </span>
             </div>
         </div>
