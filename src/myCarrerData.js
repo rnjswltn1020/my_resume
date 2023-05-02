@@ -19,7 +19,8 @@ const myData = {
                     projectName: '마인드그라프',
                     period: '2022.02-2022.05',
                     release: '2022-6-6',
-                    description: '콘텐츠 결합형 AI 마음성장 플랫폼 입니다.',
+                    description:
+                        '마인드 그라프는 사람들의 마음을 분석하고, 사람들에게 필요한 마음 건강 콘텐츠를 제공하는 콘텐츠 결합형 AI 마음성장 플랫폼 입니다.',
                     myJob: '관리자 페이지 유지/보수',
                     techStack: 'Javascript, Jquery',
                 },
@@ -27,7 +28,7 @@ const myData = {
                     projectName: 'Wappener 와프너 ',
                     period: '2022.02-2022.10',
                     release: '2021-6-14',
-                    description: '와인 소셜 커뮤니티 플랫폼 입니다.',
+                    description: '와인의 취향과 즐거움을 공유하고 기록하는 SNS 플랫폼 입니다. ',
                     myJob: '관리자 페이지 유지/보수',
                     techStack: 'Javascript, Jquery',
                 },
@@ -35,21 +36,24 @@ const myData = {
                     projectName: '엄마의 지도 ',
                     period: '2022.04-2022.10',
                     release: '2022-6-6',
-                    description: '양육자들을 위한 아이들  ',
+                    description:
+                        'SNS 20만 팔로워 엄마의 지도의 장소들을 사용자의 연령, 위치, 관심사에 따라 콘텐츠를 제공하며, 아이를 위한 시설 정보를 공유하는 커뮤니티 플랫폼입니다.',
                     myJob: '관리자 페이지 개발 , 유지/보수',
                     techStack: 'Javascript, Jquery',
                 },
                 {
-                    projectName: '후다닥 ',
+                    projectName: '후다닥케어',
                     period: '2022.07-2022.10',
-                    description: '관리자 페이지 작업',
+                    description:
+                        '진료 예약부터 비대면 진료, 안전한 약수령, 맞춤 정보까지 제공하는 비대면 진료 플랫폼 입니다.',
                     myJob: '어드민 페이지 개발',
                     techStack: 'Vue.js',
                 },
                 {
                     projectName: '메디코슨',
                     period: '2022.11-2022.11',
-                    description: '관리자 페이지 작업',
+                    description:
+                        '전용 의료기기 리쥬리프트 사용자를 위한 관리/기록/사용 가이드를 확인 할 수 있는 플랫폼 입니다.',
                     myJob: '어드민 페이지 개발',
                     techStack: 'Javascript, Jquery',
                 },
@@ -58,13 +62,14 @@ const myData = {
                     period: '2022.12-2022.12',
                     description:
                         'javascript로 되어있던 기존 홈페이지를 React.js를 사용해서 변경하는 작업을 하였고, 추가 페이지와 변경 된 페이지 작업 또한 진행 하였습니다.',
-                    myJob: '프로젝트 생성 후 베이스코드 작성, 기본 레이아웃 작업, 컴포넌트 생성, 각 페이지 뷰작업/ 애니메이션 작업',
+                    myJob: '프로젝트 생성 후 베이스코드 작성, 기본 레이아웃 작업, 컴포넌트 생성, 각 페이지 뷰작업/ 애니메이션 작업,',
                     techStack: 'React.js',
                 },
                 {
-                    projectName: '온누리',
+                    projectName: '온누리약국',
                     period: '2023.01-2023.03 (프로젝트중 퇴사)',
-                    description: '어드민 페이지 작업',
+                    description:
+                        '약국에서 처방받은 처방전 토대로 약성분 설명/환자 별 맞춤 정보까지 제공하는 플랫폼 입니다. ',
                     myJob: '관리자 페이지 개발',
                     techStack: 'React.js',
                 },
