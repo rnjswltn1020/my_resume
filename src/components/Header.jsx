@@ -52,8 +52,8 @@ export default function Header() {
     return (
         <header
             ref={targetHeader}
-            className="w-full h-19 border-b-8 border-amber-400 px-4 fixed top-0 duration-500 bg-main p-2 backdrop-blur-sm z-9999">
-            <nav>
+            className="w-full h-19 border-b-8 border-amber-400 px-4 fixed top-0 duration-500 bg-main p-2 backdrop-blur-sm z-9999 flex justify-center">
+            <nav className="w-full max-w-screen-lg">
                 <ul className="flex justify-end items-center gap-x-4 text-lg duration-3000">
                     {menuList.map(m => (
                         <li
