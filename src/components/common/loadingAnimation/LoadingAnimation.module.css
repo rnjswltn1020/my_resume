@@ -82,13 +82,13 @@
         transform: translate(5500%, -150px) ;
     }
     50% {
-        transform: translate(6000%, -10px) ;
+        transform: translate(6000%, 0px) ;
     }
     60%{
         transform: translate(7000%, -50px) rotate(350deg);
     }
     80%{
-        transform: translate(8000%, -5px) rotate(660deg);
+        transform: translate(8000%, 0px) rotate(660deg);
     }
     100% {
         transform: translate(9000%,0) rotate(960deg);
