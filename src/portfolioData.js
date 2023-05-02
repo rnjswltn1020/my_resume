@@ -98,5 +98,17 @@ const portfolioData = [
         percentage: '100%',
         tech: ['React.js', 'styled-components'],
     },
+    {
+        id: 'jeju',
+        title: 'jeju',
+        type: 'side',
+        section: ['웹 페이지'],
+        whatTodo: '스크롤이벤트를 이용한 비디오 인터랙션 구현',
+        thumbImage: true,
+        detailImage: true,
+        link: 'http://jisookwon.dothome.co.kr/jeju/index.html',
+        percentage: '100%',
+        tech: ['javascript'],
+    },
 ];
 export default portfolioData;

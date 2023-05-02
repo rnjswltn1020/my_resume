@@ -3,7 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function Header() {
     const location = useLocation();
-    const [targetMenu, setTargetMenu] = useState(location.pathname.slice(1));
+    const handleTargetMenu = () => {
+        if (location.pathname !== '/') return location.pathname.slice(1);
+    };
+    const [targetMenu, setTargetMenu] = useState(handleTargetMenu());
     const targetHeader = useRef(null);
     const menuList = [
         {
@@ -41,6 +44,10 @@ export default function Header() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        if (location.pathname !== '/') setTargetMenu(handleTargetMenu());
+    }, [location.pathname]);
 
     return (
         <header
