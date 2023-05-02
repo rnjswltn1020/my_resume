@@ -27,18 +27,17 @@ export default function Layout() {
         }
     }, []);
 
-    // !loading ? (
-    //     <div className={`wrapper opacity-0 ${!loading && 'opacity-1'} duration-500 `}>
-    //         <div className="w-full h-auto flex flex-col justify-center min-h-full pb-14">
-    //             <Header />
-    //             <section className="max-w-screen-lg mx-auto mt-14 flex-1 w-full">
-    //                 <Outlet />
-    //             </section>
-    //         </div>
-    //         <Footer />
-    //     </div>
-    // ) : (
-    //     <LoadingAnimation />
-    // );
-    return <LoadingAnimation />;
+    return !loading ? (
+        <div className={`wrapper opacity-0 ${!loading && 'opacity-1'} duration-500 `}>
+            <div className="w-full h-auto flex flex-col justify-center min-h-full pb-14">
+                <Header />
+                <section className="max-w-screen-lg mx-auto mt-14 flex-1 w-full">
+                    <Outlet />
+                </section>
+            </div>
+            <Footer />
+        </div>
+    ) : (
+        <LoadingAnimation />
+    );
 }
