@@ -37,20 +37,6 @@ function PortfolioImage(props) {
     return (
         <>
             {showSpinner && <Spinner />}
-            {data.link && (
-                <div
-                    className="absolute top-3 right-8 md:right-12 top-3 right-12 w-10 h-10 animate-bounce cursor-pointer md:w-12 md:h-12"
-                    onClick={() => window.open(data.link)}>
-                    <img
-                        className="absolute top-0 right-0 cursor-pointer w-full h-full"
-                        src={`${path}/img/like.png`}
-                        alt="링크이동버튼"
-                    />
-                    <span className="absolute text-xs top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-white">
-                        view
-                    </span>
-                </div>
-            )}
             <img
                 src={`${path}/img/portfolio/${data.id}-detail.png`}
                 key={data.id}
@@ -107,8 +93,23 @@ export default function PortfolioDetail({ data, showItemIdx }) {
         setShowIdx(targetIdx);
     };
 
+    console.log(targetData().link);
     return (
         <>
+            {targetData().link !== undefined && (
+                <div
+                    className="absolute top-3 right-8 md:right-12 top-3 right-12 w-10 h-10 animate-bounce cursor-pointer md:w-12 md:h-12 z-999999"
+                    onClick={() => window.open(targetData().link)}>
+                    <img
+                        className="absolute top-0 right-0 cursor-pointer w-full h-full"
+                        src={`${path}/img/like.png`}
+                        alt="링크이동버튼"
+                    />
+                    <span className="absolute text-xs top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 text-white">
+                        view
+                    </span>
+                </div>
+            )}
             <div className="relative bg-white flex justify-center items-center w-full h-full overflow-y-scroll flex items-baseline z-11002">
                 <PortfolioImage data={targetData()} />
             </div>
