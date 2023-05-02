@@ -10,7 +10,7 @@ export default function LoadingAnimation() {
                 <br />
                 Portfolio Loading ...
             </h1>
-            <div className="flex relative w-full">
+            <div className="flex relative w-full pb-0.5 border-emerald-950 border-b-2 border-dashed">
                 <span className={styled.run}>
                     <DirectionsWalkIcon fontSize="large" />
                 </span>

@@ -34,6 +34,9 @@ module.exports = {
             spacing: {
                 portfolioPd: 'calc(100%  /199 * 129)',
             },
+            left: {
+                ballPosition: '15.5%',
+            },
         },
     },
     plugins: [],
