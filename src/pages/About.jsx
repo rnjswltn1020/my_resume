@@ -45,6 +45,37 @@ export default function About() {
                 </p>
             </div>
             <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
+                Skills.
+            </h3>
+            <article className="w-full mb-10 p-5">
+                <ul className="flex gap-5 flex flex-wrap text-sm md:text-base">
+                    {myData.skills.map((s, idx) => (
+                        <li key={idx} className="rounded-xl bg-slate-100 p-1">
+                            {s}
+                        </li>
+                    ))}
+                </ul>
+            </article>
+            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
+                Contact.
+            </h3>
+            <article className="w-full mb-10 p-5">
+                <ul className="flex gap-5 flex flex-col text-sm md:text-base">
+                    {myData.contact.map((c, idx) => {
+                        return (
+                            <li key={idx} className="rounded-xl bg-slate-100 p-1">
+                                <span> {c.method} : </span>
+                                <a
+                                    href={c.method === 'E-mail' ? `mailto:${c.url}` : c.url}
+                                    target={c.method !== 'E-mail' ? '_black' : ''}>
+                                    {c.url}
+                                </a>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </article>
+            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Work Experience.
             </h3>
             <section className="w-full mb-10">
