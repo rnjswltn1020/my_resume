@@ -41,7 +41,7 @@ export default function About() {
                 </h2>
                 <p className="text-3xl md:text-3xl">
                     새로운 경험을 쌓는것에 호의적이며,
-                    <br /> 저의 가장 큰 장점입니다. <br />
+                    <br /> 진득하게 버텨내는 인내심이 저의 가장 큰 장점입니다. <br />
                 </p>
             </div>
             <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
