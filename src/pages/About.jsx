@@ -65,11 +65,14 @@ export default function About() {
                         return (
                             <li key={idx} className="rounded-xl bg-slate-100 p-1">
                                 <span> {c.method} : </span>
-                                <a
-                                    href={c.method === 'E-mail' ? `mailto:${c.url}` : c.url}
-                                    target={c.method !== 'E-mail' ? '_black' : ''}>
-                                    {c.url}
-                                </a>
+                                {c.method === 'Phone' && <a href={`tel:${c.url}`}>{c.url}</a>}
+                                {c.method !== 'Phone' && (
+                                    <a
+                                        href={c.method === 'E-mail' ? `mailto:${c.url}` : c.url}
+                                        target={c.method !== 'E-mail' ? '_black' : ''}>
+                                        {c.url}
+                                    </a>
+                                )}
                             </li>
                         );
                     })}
