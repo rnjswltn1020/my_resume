@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import Header from '../Header';
+import Header from './Header';
 import Footer from '../../pages/Footer';
 import LoadingAnimation from './loadingAnimation/LoadingAnimation';
 
@@ -17,12 +17,12 @@ export default function Layout() {
                 setTimeout(() => {
                     document.querySelector('#root > div').classList.remove('opacity-0');
                 }, 500);
-            }, 500);
+            }, 300);
         } else {
             // setLoading(false);
             setTimeout(() => {
                 document.querySelector('#root > div').classList.remove('opacity-0');
-            }, 500);
+            }, 300);
         }
     }, []);
 

@@ -40,7 +40,7 @@ export default function About() {
                     <br /> 저는 권지수입니다.
                 </h2>
                 <p className="text-3xl md:text-3xl">
-                    새로운 경험을 쌓는것에 호의적이며,
+                    새로운 경험을 쌓는것에 열정적이며,
                     <br /> 진득하게 버텨내는 인내심이 저의 가장 큰 장점입니다. <br />
                 </p>
             </div>

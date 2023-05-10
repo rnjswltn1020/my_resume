@@ -11,6 +11,14 @@ export default function CarrerItem({ data: { company, task, period, details } })
                     return (
                         <li key={d.projectName} className="flex gap-3 flex-col">
                             <div>
+                                <img
+                                    className="mb-3"
+                                    src={`/img/portfolio/${
+                                        d.thumbImage ? d.id : 'admin'
+                                    }-thumb.png`}
+                                    alt={d.id}
+                                    onClick={() => {}}
+                                />
                                 <h2 className="text-2xl md:text-3xl font-bold mb-3">
                                     {d.projectName}
                                 </h2>
@@ -19,6 +27,12 @@ export default function CarrerItem({ data: { company, task, period, details } })
                             <div>
                                 <h2 className="font-bold text-1xl md:text-2xl">Description</h2>
                                 <p>{d.description}</p>
+                            </div>
+                            <div>
+                                <h2 className="font-bold text-1xl md:text-2xl underline decoration-pink-500 decoration-wavy">
+                                    경험하고 배운점
+                                </h2>
+                                <p dangerouslySetInnerHTML={{ __html: d.whatdiddo }} />
                             </div>
                             <div>
                                 <h2 className="font-bold text-1xl md:text-2xl">맡은 직무</h2>
