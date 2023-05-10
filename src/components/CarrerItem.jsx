@@ -28,12 +28,14 @@ export default function CarrerItem({ data: { company, task, period, details } })
                                 <h2 className="font-bold text-1xl md:text-2xl">Description</h2>
                                 <p>{d.description}</p>
                             </div>
-                            <div>
-                                <h2 className="font-bold text-1xl md:text-2xl underline decoration-pink-500 decoration-wavy">
-                                    경험하고 배운점
-                                </h2>
-                                <p dangerouslySetInnerHTML={{ __html: d.whatdiddo }} />
-                            </div>
+                            {d.whatdiddo && (
+                                <div>
+                                    <h2 className="font-bold text-1xl md:text-2xl underline decoration-pink-500 decoration-wavy">
+                                        프로젝트 회고
+                                    </h2>
+                                    <p dangerouslySetInnerHTML={{ __html: d.whatdiddo }} />
+                                </div>
+                            )}
                             <div>
                                 <h2 className="font-bold text-1xl md:text-2xl">맡은 직무</h2>
                                 <p>{d.myJob}</p>
