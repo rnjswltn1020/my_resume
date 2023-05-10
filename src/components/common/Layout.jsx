@@ -6,21 +6,20 @@ import LoadingAnimation from './loadingAnimation/LoadingAnimation';
 
 export default function Layout() {
     const location = useLocation();
-    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         if (location.pathname === '/') {
             setTimeout(() => {
                 navigate('/about');
-                setLoading(false);
+                // setLoading(false);
                 setTimeout(() => {
-                    console.log(document.querySelector('#root > div'));
                     document.querySelector('#root > div').classList.remove('opacity-0');
                 }, 500);
-            }, 8500);
+            }, 500);
         } else {
-            setLoading(false);
+            // setLoading(false);
             setTimeout(() => {
                 document.querySelector('#root > div').classList.remove('opacity-0');
             }, 500);

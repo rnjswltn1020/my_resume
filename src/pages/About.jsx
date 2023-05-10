@@ -11,7 +11,7 @@ export default function About() {
         if (linkBox.current !== null) {
             const scrollY = window.scrollY;
 
-            if (scrollY > 2400) {
+            if (scrollY > 300) {
                 linkBox.current.style.opacity = '1';
                 linkBox.current.style.visibility = 'visible';
             } else {
@@ -39,9 +39,9 @@ export default function About() {
                     안녕하세요,
                     <br /> 저는 권지수입니다.
                 </h2>
-                <p className="text-3xl md:text-4xl">
-                    남들보다 첫 시작이 늦은만큼, 더 발빠르게 성장해나갈 자신 있습니다! <br /> 현재
-                    웹 프론트엔드 엔지니어 2년차로 일하고 있습니다.{' '}
+                <p className="text-3xl md:text-3xl">
+                    새로운 경험을 쌓는것에 호의적이며,
+                    <br /> 저의 가장 큰 장점입니다. <br />
                 </p>
             </div>
             <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
@@ -72,37 +72,6 @@ export default function About() {
                     {myData.trainings.map(t => (
                         <TrainingItem data={t} key={t.id} />
                     ))}
-                </ul>
-            </article>
-            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
-                Skills.
-            </h3>
-            <article className="w-full mb-10 p-5">
-                <ul className="flex gap-5 flex flex-wrap text-sm md:text-base">
-                    {myData.skills.map((s, idx) => (
-                        <li key={idx} className="rounded-xl bg-slate-100 p-1">
-                            {s}
-                        </li>
-                    ))}
-                </ul>
-            </article>
-            <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
-                Contact.
-            </h3>
-            <article className="w-full mb-10 p-5">
-                <ul className="flex gap-5 flex flex-col text-sm md:text-base">
-                    {myData.contact.map((c, idx) => {
-                        return (
-                            <li key={idx} className="rounded-xl bg-slate-100 p-1">
-                                <span> {c.method} : </span>
-                                <a
-                                    href={c.method === 'E-mail' ? `mailto:${c.url}` : c.url}
-                                    target={c.method !== 'E-mail' ? '_black' : ''}>
-                                    {c.url}
-                                </a>
-                            </li>
-                        );
-                    })}
                 </ul>
             </article>
             <span
