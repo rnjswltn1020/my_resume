@@ -34,15 +34,21 @@ export default function About() {
 
     return (
         <main className="flex justify-center items-center flex-col gap-2">
-            <div className="mb-48 mt-48 p-5">
-                <h2 className="text-4xl mb-10 md:text-5xl">
-                    안녕하세요,
-                    <br /> 저는 권지수입니다.
-                </h2>
-                <p className="text-3xl md:text-3xl">
-                    새로운 경험을 쌓는것에 열정적이며,
-                    <br /> 진득하게 버텨내는 인내심이 저의 가장 큰 장점입니다. <br />
-                </p>
+            <div className="flex mb-32 mt-32 p-3 gap-10 items-center">
+                <div className="w-2/5 overflow-hidden rounded-full shadow-xl">
+                    <img src="/img/profile.jpg" alt="profileImage" />
+                </div>
+                <div className="flex-1">
+                    <h2 className="text-4xl mb-10 md:text-5xl">
+                        안녕하세요,
+                        <br /> 저는 권지수입니다.
+                    </h2>
+                    <p className="text-2xl md:text-3xl">
+                        새로운 경험을 쌓는것에 열정적이며,
+                        <br />
+                        한번 시작하면 진득하게 버텨내는 인내심이 저의 가장 큰 장점입니다. <br />
+                    </p>
+                </div>
             </div>
             <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Skills.
@@ -89,14 +95,10 @@ export default function About() {
             <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Education.
             </h3>
-            <article className="w-full mb-10 p-5">
+            <article className="w-full mb-1 p-5">
                 <h2 className="text-2xl md:text-3xl mb-3 font-bold">한성대학교</h2>
                 <h4>패션디자인 전공</h4>
                 <h4 className="mb-5">2011.03-2016.02</h4>
-                <p>
-                    패션 디자인전공으로 4년동안 공부하였으며, 졸업 작품으로 한복과 여성 기성복을
-                    만들어서 패션쇼를 진행한 경험이 있습니다.
-                </p>
             </article>
             <h3 className="text-4xl text-right w-full border-b-4 inline-block max-w-screen-lg border-amber-400 md:text-5xl">
                 Training.

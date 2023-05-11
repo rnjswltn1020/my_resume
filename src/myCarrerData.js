@@ -167,7 +167,7 @@ const myData = {
             ],
         },
     ],
-    skills: ['React.js', 'Vue.js', 'Javascript', 'Jquery', 'HTML5', 'CSS3', 'SCSS'],
+    skills: ['javascript', 'React.js', 'vue.js', 'Jquery', 'HTML/CSS'],
     contact: [
         { method: 'Phone', url: '010-3679-7876' },
         { method: 'E-mail', url: 'rnjswltn1020@naver.com' },
