@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CarrerItem from '../components/CarrerItem';
 import myData from '../myCarrerData';
 import TrainingItem from '../components/TrainingItem';
@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function About() {
     const linkBox = useRef(null);
     const navigate = useNavigate();
+    const [profile, setProfile] = useState(false);
     const checkScroll = () => {
         if (linkBox.current !== null) {
             const scrollY = window.scrollY;
@@ -32,11 +33,23 @@ export default function About() {
         };
     }, []);
 
+    console.log(profile);
+
     return (
         <main className="flex justify-center items-center flex-col gap-2">
             <div className="flex mb-32 mt-32 p-3 gap-10 items-center">
-                <div className="w-2/5 overflow-hidden rounded-full shadow-xl">
-                    <img src="/img/profile.jpg" alt="profileImage" />
+                <div className="w-2/5 h-full overflow-hidden rounded-full shadow-xl relative">
+                    {!profile && (
+                        <div className="absolute top-0 left-0 w-full h-full animate-pulse bg-amber-50" />
+                    )}
+                    <img
+                        className={`${!profile ? 'opacity-0' : 'opacity-1'}`}
+                        src="/img/profile.jpg"
+                        alt="profileImage"
+                        onLoad={e => {
+                            setProfile(true);
+                        }}
+                    />
                 </div>
                 <div className="flex-1">
                     <h2 className="text-4xl mb-10 md:text-5xl">
