@@ -43,7 +43,7 @@ export default function About() {
                         <div className="absolute top-0 left-0 w-full h-full animate-pulse bg-amber-50" />
                     )}
                     <img
-                        className={`${!profile ? 'opacity-0' : 'opacity-1'}`}
+                        className={`duration-300 ${!profile ? 'opacity-0' : 'opacity-1'}`}
                         src="/img/profile.jpg"
                         alt="profileImage"
                         onLoad={e => {
