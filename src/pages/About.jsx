@@ -37,8 +37,8 @@ export default function About() {
 
     return (
         <main className="flex justify-center items-center flex-col gap-2">
-            <div className="flex mb-32 mt-32 p-3 gap-10 items-center">
-                <div className="w-2/5 h-full overflow-hidden rounded-full shadow-xl relative">
+            <div className="flex flex-col md:flex-row mb-12 md:mb-32 mt-12 md:mt-32 p-3 gap-10 items-center">
+                <div className="w-9/12 sm:w-5/12 md:w-4/12 h-full overflow-hidden rounded-full shadow-xl relative">
                     {!profile && (
                         <div className="absolute top-0 left-0 w-full h-full animate-pulse bg-amber-50" />
                     )}
