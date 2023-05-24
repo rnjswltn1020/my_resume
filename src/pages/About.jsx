@@ -29,7 +29,7 @@ export default function About() {
     return (
         <>
             <main className="flex justify-center items-center flex-col gap-2">
-                <div className="flex flex-col md:flex-row mb-12 md:mb-32 mt-12 md:mt-32 p-3 gap-10 items-center">
+                <div className="flex flex-col md:flex-row mb-12 md:mb-32 md:mt-32 p-3 gap-10 items-center">
                     <div className="w-9/12 sm:w-5/12 md:w-4/12 h-full overflow-hidden rounded-full shadow-xl relative">
                         {!profile && (
                             <div className="absolute top-0 left-0 w-full h-full animate-pulse bg-amber-50" />
@@ -48,7 +48,7 @@ export default function About() {
                             안녕하세요,
                             <br /> 저는 권지수입니다.
                         </h2>
-                        <p className="text-2xl md:text-3xl">
+                        <p className="text-xl md:text-2xl">
                             새로운 경험을 쌓는것에 열정적이며,
                             <br />
                             한번 시작하면 진득하게 버텨내는 인내심이 저의 가장 큰 장점입니다. <br />
