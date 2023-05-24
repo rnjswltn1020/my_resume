@@ -18,11 +18,13 @@ const myData = {
                     myJob: '관리자 페이지 개발을 위한 프로젝트 생성, 베이스코드 작성, 기본 레이아웃 작업, 컴포넌트 생성, Rest Api 작업',
                     techStack: 'React.js',
                     thumbImage: false,
+                    detailImage: false,
                 },
                 {
                     id: 'dev',
                     projectName: '데블록 자사홈페이지 리뉴얼',
                     period: '2022.12-2022.12',
+                    link: 'https://devlock.co.kr/',
                     description:
                         '자바스크립트 기반의 기존 자사 홈페이지를 리액트로 변환하고, 새로운 페이지를 구축하는 내부 프로젝트입니다.',
                     myJob: '관리자 페이지 개발을 위한 프로젝트 생성 후 베이스코드 작성, 기본 레이아웃 작업, 컴포넌트 생성, 각 페이지 뷰작업/ 애니메이션 작업,ux 개선을 위한 디테일 추가',
@@ -31,6 +33,7 @@ const myData = {
                      `,
                     techStack: 'React.js',
                     thumbImage: true,
+                    detailImage: true,
                 },
                 {
                     id: 'medicoson',
@@ -41,6 +44,7 @@ const myData = {
                     myJob: '관리자 페이지 개발',
                     techStack: 'Javascript, Jquery',
                     thumbImage: false,
+                    detailImage: true,
                 },
                 {
                     id: 'wdd',
@@ -53,6 +57,7 @@ const myData = {
                     myJob: '관리자 페이지 개발을 위한 모든 컴포넌트 생성,전체 페이지 뷰작업, Rest Api 작업',
                     techStack: 'Vue.js',
                     thumbImage: false,
+                    detailImage: true,
                 },
                 {
                     id: 'msm',
@@ -66,6 +71,7 @@ const myData = {
                      `,
                     techStack: 'Javascript, Jquery',
                     thumbImage: true,
+                    detailImage: true,
                 },
 
                 {
@@ -75,8 +81,11 @@ const myData = {
                     release: '2021-6-14',
                     description: '와인의 취향과 즐거움을 공유하고 기록하는 SNS 플랫폼 입니다. ',
                     myJob: '관리자 페이지 유지/보수',
+                    whatdiddo: `기존에 개발되어있던 프로젝트의 추가 요청건에 대한 유지/보수를 진행하면서, 클라이언트 기획서상의 기재되어있는 기획자가 바라는 바와 기능에 대해 개발자로써 정확하게 캐치하고 개발해내는것. 즉,<strong> 커뮤니케이션의 중요성에 대해 배울 수 있었습니다.</strong>
+                     `,
                     techStack: 'Javascript, Jquery',
                     thumbImage: true,
+                    detailImage: true,
                 },
                 {
                     id: 'bac',
@@ -88,6 +97,7 @@ const myData = {
                     myJob: '관리자 페이지 유지/보수',
                     techStack: 'Javascript, Jquery',
                     thumbImage: true,
+                    detailImage: true,
                 },
                 {
                     id: 'mag',
@@ -96,11 +106,57 @@ const myData = {
                     release: '2022-6-6',
                     description:
                         '마인드 그라프는 사람들의 마음을 분석하고, 사람들에게 필요한 마음 건강 콘텐츠를 제공하는 콘텐츠 결합형 AI 마음성장 플랫폼 입니다.',
+                    whatdiddo: `제가 입사했을땐 이미 프로젝트 개발의 막바지를 바라보는 시점이었기 때문에, 기존에 짜여져있던 전체 코드들을 리뷰 하면서 어떤식으로 코드를 짜왔었고 ajax를 사용해서 비동기처리를 어떤식으로 처리해왔는지 개념에 대해 학습할 수 있었던 프로젝트입니다.
+                     `,
                     myJob: '관리자 페이지 유지/보수',
                     techStack: 'Javascript, Jquery',
                     thumbImage: true,
+                    detailImage: true,
                 },
             ],
+        },
+    ],
+    sideProjects: [
+        {
+            id: 'ordinaryCloset',
+            projectName: '보통의 클로젯 쇼핑몰',
+            period: '2023.2-2023.3',
+            link: 'https://ordinarycloset.netlify.app/',
+            description:
+                'Ordinary Closet 이라는 이름을 가진 쇼핑몰 웹사이트로 firebase와 cloudinary를 사용하여 기능구현하는것에 중점을 둔 프로젝트 입니다. ',
+            whatdiddo: `파이어베이스를 이용해 OAuth 로그인과 실시간 데이터베이스를 사용하는 방법에 대해 배워갈 수 있었습니다. 또한, Cloudinary 서비스를 이용해서 이미지를 업로드하는 기능도 처음 사용해보았고, 제품관련 CRUD 통신 방법을 React로 구현하는 방식에 대해 명확하게 익힐 수 있었습니다.
+                     `,
+            myJob: 'Firebase 기반 realtime database, auth Login 기능구현, Cloudinary를 이용해 이미지 업로드',
+            techStack: ['React.js', 'styled-components'],
+            thumbImage: true,
+            detailImage: false,
+        },
+        {
+            id: 'todolist',
+            projectName: 'To Do List',
+            period: '2022.12-2022.12',
+            link: 'https://rnjswltn1020.github.io/todoListReact/',
+            description: 'React 기반 CRUD 구현 투두 리스트 프로젝트 입니다. ',
+            whatdiddo: `
+            기본중에 기본인 CRUD를 React로 구현해가면서 처음으로 Styled component를 사용해보았고, 사용법에 대해 익힐 수 있었습니다. 또한, 데이터의localStorage의 적용하면서 SessionStorage와의 차이점에 대해 명확하게 배워 갈 수 있었습니다.
+                     `,
+            myJob: 'localStorage 사용해서 CRUD 구현, 다크모드, 필터링[전체,한일, 할일]',
+            techStack: ['React.js', 'styled-components'],
+            thumbImage: true,
+            detailImage: false,
+        },
+        {
+            id: 'jeju',
+            projectName: '제주 섭지코지 소개 웹사이트',
+            period: '2021.12-2022.1',
+            link: 'http://jisookwon.dothome.co.kr/jeju/index.html',
+            description:
+                '스크롤이벤트를 이용해서 제주도 섭지코지를 소개하는 웹사이트개발 프로젝트 입니다..',
+            whatdiddo: `스크롤이벤트를 이용해서 여러개의 이미지를 마치 비디오처럼 부드럽게 보여지게하는 고급 인터랙션 효과에 대해 배워 갈 수 있었고, 인터랙티브 웹 개발에 대한 기본적인 기초 지식을 쌓아갈 수 있었습니다. 또한, 능숙치 않았던 ES6 스크립트 문법을 이전보다 디테일하게 배워 갈 수 있었습니다. `,
+            myJob: '스크롤이벤트를 이용한 비디오 인터랙션 구현',
+            techStack: ['javascript'],
+            thumbImage: true,
+            detailImage: true,
         },
     ],
     trainings: [
