@@ -1,14 +1,16 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import CarrerItem from '../components/CarrerItem';
 import myData from '../myCarrerData';
 import TrainingItem from '../components/TrainingItem';
 import Modal from '../components/common/Modal';
 import PortfolioDetail from '../components/PortfolioDetail';
 import PortfolioItem from '../components/PortfolioItem';
+import { useNavigate } from 'react-router-dom';
 
 export default function About() {
     const modal = useRef(null);
     const [profile, setProfile] = useState(false);
+    const [showBtn, setShowBtn] = useState(false);
     const [getPortFolio, setPortFolio] = useState([]);
     const [getShowIdx, setShowIdx] = useState(0);
 
@@ -25,6 +27,34 @@ export default function About() {
 
         setPortFolio(portfolios);
     };
+
+    const checkScroll = () => {
+        const scrollY = window.scrollY;
+
+        if (scrollY > 2400) {
+            setShowBtn(true);
+        } else {
+            setShowBtn(false);
+        }
+    };
+
+    const goToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            window.addEventListener('scroll', checkScroll);
+        }, 100);
+
+        return () => {
+            clearInterval(timer);
+            window.addEventListener('scroll', checkScroll);
+        };
+    }, []);
 
     return (
         <>
@@ -137,6 +167,13 @@ export default function About() {
                         ))}
                     </ul>
                 </article>
+                {showBtn && (
+                    <span
+                        onClick={() => goToTop()}
+                        className="fixed bottom-10 md:bottom-40 right-10 bg-red-400 rounded-2xl p-3 text-xs text-white cursor-pointer animate-bounce transition duration-500 opacity-1">
+                        Go to Top🎈
+                    </span>
+                )}
             </main>
             <Modal ref={modal}>
                 <PortfolioDetail data={getPortFolio} showItemIdx={getShowIdx} />
