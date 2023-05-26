@@ -20,12 +20,19 @@ export default function PortfolioItem({
             key={projectName}
             className="flex gap-3 flex-col md:flex-row gap-5 bg-slate-50 rounded-lg ">
             <div className="flex justify-center md:justify-start items-center w-full md:w-2/5">
-                <img
-                    className={`${detailImage || link ? 'cursor-pointer' : ''} `}
-                    src={`/img/portfolio/${thumbImage ? id : 'admin'}-thumb.png`}
-                    alt={id}
-                    onClick={onClickEvt}
-                />
+                <div className="relative">
+                    <img
+                        src={`/img/portfolio/${thumbImage ? id : 'admin'}-thumb.png`}
+                        alt={id}
+                        onClick={onClickEvt}
+                    />
+                    <div
+                        className={`absolute top-0 left-0 w-full h-full transition duration-300 opacity-0 hover:opacity-100 hover:bg-modalBg flex justify-center items-center ${
+                            detailImage || link ? 'cursor-pointer' : ''
+                        } `}>
+                        <span className={`p-2 bg-amber-400 rounded-2xl text-sm`}>상세보기</span>
+                    </div>
+                </div>
             </div>
             <div className="flex-1 text-lg flex flex-col gap-2 p-2">
                 <div className="flex flex-col md:flex-row md:items-center gap-2">
